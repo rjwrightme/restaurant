@@ -3,9 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Revervation</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1>Make a Reservation</h1>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Restaurant Numero Uno</h1>
+        <h3>Welcome to the best Italian restaurant in town!</h3>
+        <hr />
+        <a href="/"
+          ><button class="btn btn-danger btn-lg">
+            <span class="fa fa-eye"></span> Return home
+          </button></a
+        >
+        <a href="/"
+          ><button class="btn btn-danger btn-lg">
+            <span class="fa fa-eye"></span> View Reservations
+          </button></a
+        >
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3><strong>Make a Reservation</strong></h3>
+            </div>
+            <div class="card-body">
+              <form method="POST" role="form">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" />
+                </div>
+                <div class="form-group">
+                  <label for="name">Email</label>
+                  <input type="text" class="form-control" id="email" />
+                </div>
+                <div class="form-group">
+                  <label for="role">Preferred Day</label>
+                  <input type="text" class="form-control" id="day" />
+                </div>
+                <div class="form-group">
+                  <label for="role">Preferred Time</label>
+                  <input type="text" class="form-control" id="time" />
+                </div>
+
+                <div class="form-group">
+                  <label for="age">Number of people</label>
+                  <input type="text" class="form-control" id="number" />
+                </div>
+              </form>
+              <br />
+              <div class="text-right">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-md"
+                  id="add-btn"
+                >
+                  <span class="fa fa-fire"></span> Make reservation
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-md"
+                  id="add-btn"
+                >
+                  <span class="fa fa-fire"></span> View Bookings
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
