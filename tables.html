@@ -4,8 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
+    <div class="jumbotron">
+      <h1>Restaurant Numero Uno</h1>
+      <h3>Welcome to the best Italian restaurant in town!</h3>
+      <hr />
+      <a href="/"
+        ><button class="btn btn-danger btn-lg">
+          <span class="fa fa-eye"></span> Return home
+        </button></a
+      >
+      <a href="/reservations"
+        ><button class="btn btn-danger btn-lg">
+          <span class="fa fa-eye"></span> Make a Reservation
+        </button></a
+      >
+    </div>
     <h1>Current Table Bookings</h1>
+    <div id="tables">
+      <p id="name"></p>
+      <p id="email"></p>
+      <p id="day"></p>
+      <p id="time"></p>
+      <p id="numPeople"></p>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $.get("api/reservations", function (data) {
+          $("#name").text(data.name);
+          $("#email").text(data.email);
+          $("#day").text(data.day);
+          $("#time").text(data.time);
+          $("#numPeople").text(data.numPeople);
+        });
+      });
+    </script>
   </body>
 </html>

@@ -27,7 +27,7 @@
             <span class="fa fa-eye"></span> Return home
           </button></a
         >
-        <a href="/"
+        <a href="/tables"
           ><button class="btn btn-danger btn-lg">
             <span class="fa fa-eye"></span> View Reservations
           </button></a
@@ -40,7 +40,7 @@
               <h3><strong>Make a Reservation</strong></h3>
             </div>
             <div class="card-body">
-              <form method="POST" role="form">
+              <form method="POST" role="form" action="/api/reservations">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" class="form-control" id="name" />
@@ -62,16 +62,16 @@
                   <label for="age">Number of people</label>
                   <input type="text" class="form-control" id="number" />
                 </div>
-              </form>
-              <br />
-              <div class="text-right">
                 <button
                   type="submit"
                   class="btn btn-primary btn-md"
-                  id="add-btn"
+                  id="reservation-btn"
                 >
                   <span class="fa fa-fire"></span> Make reservation
                 </button>
+              </form>
+              <br />
+              <div class="text-right">
                 <button
                   type="submit"
                   class="btn btn-primary btn-md"
@@ -85,5 +85,18 @@
         </div>
       </div>
     </div>
+    <script>
+      $("#reservation-btn").on("click", function (event) {
+        event.preventDefault();
+        const newReservation = {
+          name: $("#name").val().trim(),
+          email: $("#email").val().trim(),
+          day: $("#day").val().trim(),
+          time: $("#time").val().trim(),
+          numPeople: $("#number").val().trim(),
+        };
+        $.post("/api/reservations", newReservation);
+      });
+    </script>
   </body>
 </html>
